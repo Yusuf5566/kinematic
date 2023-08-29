@@ -6,17 +6,17 @@
 #define KINEMATICS_FOUR_MECANUM_H
 #include "../vehicle.h"
 
-namespace lingxi
-{
-namespace control
-{
 class FourMecanum : public Vehicle
 {
 public:
-    virtual VehicleCommand ForwardKinematic(double vx, double vy, double omega) override;
+    virtual ChassisMotionModel InverseKinematic(double vx, double vy, double omega) override;
+    virtual VehicleVelocity ForwardKinematic(const ChassisMotionModel& feedback) override;
+
+private:
+    FourMecanumParam _param;
+
 };
 
-}  // namespace control
-}  // namespace lingxi
+
 
 #endif  // KINEMATICS_FOUR_MECANUM_H

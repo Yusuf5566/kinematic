@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.15)
 # 设置工程名
 project(kinematics VERSION 1.0.0)
 
-add_executable(${PROJECT_NAME} src/vehicle.h)
+add_executable(${PROJECT_NAME})
 
 # 设置目标的编译参数，讲警告等级设置为最高
 target_compile_options(${PROJECT_NAME} PRIVATE

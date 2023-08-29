@@ -7,18 +7,17 @@
 
 #include "../vehicle.h"
 
-namespace lingxi
-{
-namespace control
-{
 
 class DiffWheel : public Vehicle
 {
 public:
-    virtual VehicleCommand ForwardKinematic(double vx, double vy, double omega) override;
+    virtual ChassisMotionModel InverseKinematic(double vx, double vy, double omega) override;
+    virtual VehicleVelocity ForwardKinematic(const ChassisMotionModel& feedback) override;
+
+private:
+    DiffWheelParam _param;
+
 };
 
-}  // namespace control
-}  // namespace lingxi
 
 #endif  // KINEMATICS_DIFF_WHEEL_H

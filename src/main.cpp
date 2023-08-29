@@ -9,18 +9,18 @@
 
 int main()
 {
-    lingxi::control::Vehicle* v1 = new lingxi::control::DoubleHelm();
-    lingxi::control::Vehicle* v2 = new lingxi::control::SingleHelm();
-    lingxi::control::Vehicle* v3 = new lingxi::control::DiffWheel();
-    lingxi::control::Vehicle* v4 = new lingxi::control::FourMecanum();
+    Vehicle* v1 = new DoubleHelm();
+    Vehicle* v2 = new SingleHelm();
+    Vehicle* v3 = new DiffWheel();
+    Vehicle* v4 = new FourMecanum();
 
-    v2->ForwardKinematic(12, 2, 3);
+    v2->InverseKinematic(12, 2, 0.5);
     std::cout << std::endl;
-    v1->ForwardKinematic(12, 1, 3);
+    v1->InverseKinematic(12, 1, 0.5);
     std::cout << std::endl;
-    v3->ForwardKinematic(12, 2, 3);
+    v3->InverseKinematic(12, 2, 3);
     std::cout << std::endl;
-    v4->ForwardKinematic(12, 2, 3);
+    v4->InverseKinematic(12, 2, 3);
 
     return 0;
 }

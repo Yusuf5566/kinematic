@@ -7,17 +7,16 @@
 
 #include "../vehicle.h"
 
-namespace lingxi
-{
-namespace control
-{
-
 class SingleHelm : public Vehicle
 {
 public:
-    virtual VehicleCommand ForwardKinematic(double vx, double vy, double omega) override;
+    virtual ChassisMotionModel InverseKinematic(double vx, double vy, double omega) override;
+    virtual VehicleVelocity ForwardKinematic(const ChassisMotionModel& feedback) override;
+
+private:
+    SingleHelmParam _param;
+
 };
 
-}  // namespace control
-}  // namespace lingxi
+
 #endif  // KINEMATICS_SINGLE_HELM_H
